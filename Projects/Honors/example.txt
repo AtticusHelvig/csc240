@@ -1,0 +1,24 @@
+// This is how I want my code to by typed.
+
+true and true;
+// returns true
+
+true or false;
+// returns false
+
+true && false;
+// returns false
+
+halfAdder(x[2] : sum, cry) {
+    sum = x[1] xor x[2];
+    cry = x[1] and x[2];
+}
+
+fullAdder(x[3] : sum, cry) {
+    halfAdder(x[1], x[2] : sum1, cry1);
+    halfAdder(sum1, x[3] : sum, cry2);
+    cry = cry1 or cry2;
+}
+
+table fullAdder();
+// returns a truth table for the fullAdder function

@@ -1,0 +1,21 @@
+while
+if
+for each
+word
+10110
++123.456
+# This is a comment
+// This is also a comment
+
+"I AM A STRING"
+"I AM AN \"ESCAPED\" STRING"
+
+once in a while, at least 3 times a day, i say 101
+a comment? # here it is
+
+-1 12. 0.000 1011 1011.01 +.2344
+
+# The end!!!!
+"This is a string with,,,, commmas!"
+"this is " wrongg"
+
