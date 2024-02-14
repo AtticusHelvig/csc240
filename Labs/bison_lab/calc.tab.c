@@ -127,7 +127,16 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef double YYSTYPE;
+union YYSTYPE
+{
+#line 10 "calc.y"
+
+        double val;
+
+#line 137 "calc.tab.c"
+
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
@@ -555,9 +564,9 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    28,    28,    29,    32,    33,    36,    37,    38,    39,
-      40,    41,    42,    43,    44,    45,    46,    47,    48,    49,
-      52,    53,    56
+       0,    36,    36,    37,    40,    41,    44,    45,    46,    47,
+      48,    49,    50,    51,    52,    53,    54,    55,    56,    57,
+      60,    61,    64
 };
 #endif
 
@@ -1156,115 +1165,115 @@ yyreduce:
   switch (yyn)
     {
   case 5: /* line: exp '\n'  */
-#line 33 "calc.y"
-                    { printf (">>> %.5g\n", yyvsp[-1]); }
-#line 1162 "calc.tab.c"
+#line 41 "calc.y"
+                    { printf (">>> %.5g\n", (yyvsp[-1].val)); }
+#line 1171 "calc.tab.c"
     break;
 
   case 6: /* exp: NUM  */
-#line 36 "calc.y"
-                             { yyval = atof(yytext);    }
-#line 1168 "calc.tab.c"
+#line 44 "calc.y"
+                             { (yyval.val) = atof(yytext);    }
+#line 1177 "calc.tab.c"
     break;
 
   case 7: /* exp: exp '+' exp  */
-#line 37 "calc.y"
-                             { yyval = yyvsp[-2] + yyvsp[0];    }
-#line 1174 "calc.tab.c"
+#line 45 "calc.y"
+                             { (yyval.val) = (yyvsp[-2].val) + (yyvsp[0].val);    }
+#line 1183 "calc.tab.c"
     break;
 
   case 8: /* exp: exp '-' exp  */
-#line 38 "calc.y"
-                             { yyval = yyvsp[-2] - yyvsp[0];    }
-#line 1180 "calc.tab.c"
+#line 46 "calc.y"
+                             { (yyval.val) = (yyvsp[-2].val) - (yyvsp[0].val);    }
+#line 1189 "calc.tab.c"
     break;
 
   case 9: /* exp: exp '*' exp  */
-#line 39 "calc.y"
-                             { yyval = yyvsp[-2] * yyvsp[0];    }
-#line 1186 "calc.tab.c"
+#line 47 "calc.y"
+                             { (yyval.val) = (yyvsp[-2].val) * (yyvsp[0].val);    }
+#line 1195 "calc.tab.c"
     break;
 
   case 10: /* exp: exp '/' exp  */
-#line 40 "calc.y"
-                             { yyval = yyvsp[-2] / yyvsp[0];    }
-#line 1192 "calc.tab.c"
+#line 48 "calc.y"
+                             { (yyval.val) = (yyvsp[-2].val) / (yyvsp[0].val);    }
+#line 1201 "calc.tab.c"
     break;
 
   case 11: /* exp: '-' exp  */
-#line 41 "calc.y"
-                             { yyval = -yyvsp[0];        }
-#line 1198 "calc.tab.c"
+#line 49 "calc.y"
+                             { (yyval.val) = -(yyvsp[0].val);        }
+#line 1207 "calc.tab.c"
     break;
 
   case 12: /* exp: '(' exp ')'  */
-#line 42 "calc.y"
-                             { yyval = yyvsp[-1];         }
-#line 1204 "calc.tab.c"
+#line 50 "calc.y"
+                             { (yyval.val) = (yyvsp[-1].val);         }
+#line 1213 "calc.tab.c"
     break;
 
   case 13: /* exp: exp '^' exp  */
-#line 43 "calc.y"
-                             { yyval = pow(yyvsp[-2], yyvsp[0]);}
-#line 1210 "calc.tab.c"
+#line 51 "calc.y"
+                             { (yyval.val) = pow((yyvsp[-2].val), (yyvsp[0].val));}
+#line 1219 "calc.tab.c"
     break;
 
   case 14: /* exp: square_root '(' exp ')'  */
-#line 44 "calc.y"
-                                    { yyval = sqrt(yyvsp[-1]);   }
-#line 1216 "calc.tab.c"
+#line 52 "calc.y"
+                                    { (yyval.val) = sqrt((yyvsp[-1].val));   }
+#line 1225 "calc.tab.c"
     break;
 
   case 15: /* exp: pi  */
-#line 45 "calc.y"
-                             { yyval = 3.14159265358979323846264;  }
-#line 1222 "calc.tab.c"
+#line 53 "calc.y"
+                             { (yyval.val) = 3.14159265358979323846264;  }
+#line 1231 "calc.tab.c"
     break;
 
   case 16: /* exp: exp squared  */
-#line 46 "calc.y"
-                             { yyval = pow(yyvsp[-1], 2); }
-#line 1228 "calc.tab.c"
+#line 54 "calc.y"
+                             { (yyval.val) = pow((yyvsp[-1].val), 2); }
+#line 1237 "calc.tab.c"
     break;
 
   case 17: /* exp: 'I' exp  */
-#line 47 "calc.y"
-                             { yyval = (int) yyvsp[0];   }
-#line 1234 "calc.tab.c"
+#line 55 "calc.y"
+                             { (yyval.val) = (int) (yyvsp[0].val);   }
+#line 1243 "calc.tab.c"
     break;
 
   case 18: /* exp: exp '%' exp  */
-#line 48 "calc.y"
-                             { yyval = (int) yyvsp[-2] % (int) yyvsp[0];    }
-#line 1240 "calc.tab.c"
+#line 56 "calc.y"
+                             { (yyval.val) = (int) (yyvsp[-2].val) % (int) (yyvsp[0].val);    }
+#line 1249 "calc.tab.c"
     break;
 
   case 19: /* exp: sum  */
-#line 49 "calc.y"
-                             { yyval = yyvsp[0]; }
-#line 1246 "calc.tab.c"
+#line 57 "calc.y"
+                             { (yyval.val) = (yyvsp[0].val); }
+#line 1255 "calc.tab.c"
     break;
 
   case 20: /* exp_list: exp  */
-#line 52 "calc.y"
-                                { yyval = yyvsp[0];      }
-#line 1252 "calc.tab.c"
+#line 60 "calc.y"
+                                { (yyval.val) = (yyvsp[0].val);      }
+#line 1261 "calc.tab.c"
     break;
 
   case 21: /* exp_list: exp exp_list  */
-#line 53 "calc.y"
-                                { yyval = yyvsp[-1] + yyvsp[0]; }
-#line 1258 "calc.tab.c"
+#line 61 "calc.y"
+                                { (yyval.val) = (yyvsp[-1].val) + (yyvsp[0].val); }
+#line 1267 "calc.tab.c"
     break;
 
   case 22: /* sum: '{' exp_list '}'  */
-#line 56 "calc.y"
-                                  { yyval = yyvsp[-1]; }
-#line 1264 "calc.tab.c"
+#line 64 "calc.y"
+                                  { (yyval.val) = (yyvsp[-1].val); }
+#line 1273 "calc.tab.c"
     break;
 
 
-#line 1268 "calc.tab.c"
+#line 1277 "calc.tab.c"
 
       default: break;
     }
@@ -1457,5 +1466,5 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 58 "calc.y"
+#line 66 "calc.y"
 
