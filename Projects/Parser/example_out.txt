@@ -1,0 +1,72 @@
+Small-C Parser - Student Name
+Defined variable EPSILON (with inititalization)
+Defined variable a
+Defined variable b
+Defined variable c
+Defined variable r1
+Defined variable r2
+Defined variable real
+Defined variable imag
+Defined variable determinant
+Defined variable done (with inititalization)
+Found function call: printf (with arguments)
+Found function call: printf (with arguments)
+Found & expression
+Found function call: scanf (with arguments)
+Found function call: fabs (with arguments)
+Found < expression
+Found a break statement
+Found an if statement
+Found function call: printf (with arguments)
+Found & expression
+Found function call: scanf (with arguments)
+Found function call: printf (with arguments)
+Found & expression
+Found function call: scanf (with arguments)
+Found * expression
+Found * expression
+Found * expression
+Found - expression
+Found assignment expression for: determinant
+Found > expression
+Found function call: sqrt (with arguments)
+Found + expression
+Found unary - expression
+Found * expression
+Found / expression
+Found assignment expression for: r1
+Found function call: sqrt (with arguments)
+Found - expression
+Found unary - expression
+Found * expression
+Found / expression
+Found assignment expression for: r2
+Found function call: printf (with arguments)
+Found a compound statement
+Found function call: fabs (with arguments)
+Found <= expression
+Found * expression
+Found / expression
+Found unary - expression
+Found assignment expression for: r1
+Found function call: printf (with arguments)
+Found a compound statement
+Found * expression
+Found / expression
+Found unary - expression
+Found assignment expression for: real
+Found unary - expression
+Found function call: sqrt (with arguments)
+Found * expression
+Found / expression
+Found assignment expression for: imag
+Found function call: printf (with arguments)
+Found a compound statement
+Found an if-else statement
+Found an if-else statement
+Found a compound statement
+Found a while loop
+Found function call: printf (with arguments)
+Found a return statement
+Found a compound statement
+Found function definition: main

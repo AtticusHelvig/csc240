@@ -1,3 +1,6 @@
+result.txt : small-c roots.c
+	./small-c roots.c > result.txt
+
 small-c : small-c-main.c lex.yy.c small-c.tab.c tokens.h
 	gcc small-c-main.c lex.yy.c small-c.tab.c -o small-c 
 
@@ -5,4 +8,4 @@ lex.yy.c : small-c.l tokens.h
 	flex small-c.l
 
 small-c.tab.c : small-c.y tokens.h
-	bison --warnings=none small-c.y
+	bison --warnings=none small-c.y -o small-c.tab.c

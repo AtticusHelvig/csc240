@@ -60,15 +60,12 @@ writestring	{ return WRITESTRING;}
 	/* Identifiers */
 [a-zA-Z_][a-zA-Z0-9_]*	{ return IDENTIFIER;	}
 
-	/* New-line is used in the Scanner only for tracking lines */
-"\n"		{ return NEWLINE; }
-
 
 	/* Ignored stuff: macros, comments, whitespace (tab, newline, carriage return, space) */
 \/\/.*	{}
 \/\*[.\n]\*\/	{}
 ^#.*	{}
-[ \t\r]
+[ \t\r\n] {}
 
 	/* Anything not matches in a lexical error. */
 .		{ printf("%d: Lexical Error: '%c'\n", yylineno, yytext[0]); exit(0); }
