@@ -6,10 +6,9 @@ int yylex (void);
 void yyerror (char const *);
 extern char *yytext;
 %}
-%define api.value.type {double}
 
 %union {
-        double exp;
+        double val;
 }
 
 %token NUM	1
@@ -28,9 +27,10 @@ extern char *yytext;
 %token '{'
 %token '}'
 
-%type <exp> exp
-%type <exp> exp_list
-%type <exp> sum
+%type <val> exp
+%type <val> exp_list
+%type <val> sum
+
 
 %%
 input:  /* empty string */
