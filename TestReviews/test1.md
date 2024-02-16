@@ -97,7 +97,7 @@ What are the three forces that influenced the evolution of languages?
 + `Development of compiler theory`
 
 ### Question 11 | 15 pts
-In early computers, the data was separate from the program instructions. In fact, the instructions were often physical configurations of the machine. Von Neuman proposed a new model combining these two aspects. What do we call this Architecture?
+In early computers, the data was separate from the program instructions. In fact, the instructions were often physical configurations of the machine. Von Neumann proposed a new model combining these two aspects. What do we call this Architecture?
 
 ### Question 12 | 10 pts
 A program accesses an illegal array index, for example accessing x[20] when x is an array of 10 ints. What type of error is this?
@@ -108,7 +108,7 @@ A program accesses an illegal array index, for example accessing x[20] when x is
 + `Semantic Error`
 
 ### Question 13 | 10 pts
-A new programmer calls a variable: first name 
+A new programmer calls a variable: `first name` 
 
 However, spaces are not allowed in a variable name. The compiler reports what kind of error?
 
@@ -219,6 +219,12 @@ What two things define a data type?
 ## Practice Question Answers & Explanations
 
 ### Question 1
+Linus Torvalds created:
++ `UNIX`
++ `Linux`
++ `Debian`
++ `Ubuntu`
+
 **Answer:** `Linux`
 
 **Explanation:** Linux is an open-source operating system kernel created by Linus Torvalds in 1991. It is based on UNIX principles and has since become the basis for many operating systems, including popular distributions like Ubuntu and Debian. However remember, Linus Torvalds did not create Ubuntu nor Debian, despite them being forks of his original work.
@@ -227,11 +233,28 @@ What two things define a data type?
 > To remember that Linus made Linux, just remember he named it after himself.
 
 ### Question 2
+What is the name of the C compiler on Linux? That is, what command do we invoke when compiling?
+
 **Answer:** `gcc`
 
 **Explanation:** GCC (GNU Compiler Collection) is a free and open-source compiler system developed by the GNU Project. It supports various programming languages, including C, C++, and others. On Linux systems, GCC is the default compiler for C programs. An example command for compiling a C program named "example.c" to an executable called "example" might look like `gcc example.c -o example`.
 
 ### Question 3
+Match the symbols with the directories
+
++ `/`
++ `.`
++ `~`
++ `..`
+
+`home`
+
+`root`
+
+`parent`
+
+`current`
+
 **Answer:**
 
 + `/`: Root directory
@@ -250,6 +273,21 @@ What two things define a data type?
 4. `..`: The double dot symbol `..` represents the parent directory of the current directory. It allows you to navigate up one level in the directory hierarchy.
 
 ### Question 4
+Match the command with the function
+
++ `mv`
++ `cp`
++ `cat`
++ `ls`
+
+`Print a file`
+
+`Rename a file`
+
+`Copy a file`
+
+`List the files in a directory`
+
 **Answer:**
 
 + `mv`: Rename a file
@@ -268,6 +306,16 @@ What two things define a data type?
 4. `ls` (List): This command is used to list the files and directories in the current directory or a specified directory. It provides information such as file names, sizes, and permissions.
 
 ### Question 5
+Review the following detailed listing:
+```
+ls -l
+-rwxr-xr-x 1 eckert eckert 6 Jan 1 2020 4:50 grocery_list
+```
+This tells me that I can read, write or execute my program **grocery_list**, but can others in my group execute it also?
+
++ `true`
++ `false`
+
 **Answer:** `true`
 
 **Explanation:**
@@ -288,25 +336,35 @@ The permissions are represented by `-rwxr-xr-x`. Let's break it down:
 So, according to the permissions displayed, members of your group (`eckert` group) can execute the `grocery_list` program, but they cannot write to it.
 
 ### Question 6
+Which of the following Linux commands/conventions does not ***does not*** provide additional help on using the system?
+
++ `Using the --help option`
++ `Using the apropos command`
++ `Using the man command`
++ `Using the --error option`
+
 **Answer:** `Using the --error option`
 
 **Explanation:**
 
-1. **Using the --help option**: Many Linux commands support the `--help` option, which provides a brief overview of the command's usage, options, and syntax. It is a common convention in Linux to include this option for commands to offer quick help to users.
-
-2. **Using the apropos command**: The `apropos` command is used to search the manual page names and descriptions for keywords. It helps users find relevant commands or topics based on the provided keyword. It serves as a useful tool for discovering commands related to a specific topic.
-
-3. **Using the man command**: The `man` command is used to display the manual pages for other commands. It provides detailed documentation, including usage instructions, options, and examples, for a specific command. By typing `man` followed by the name of the command, users can access comprehensive help and documentation directly from the terminal.
-
-4. **Using the --error option**: This option is not a standard convention in Linux for accessing help or documentation. In fact, using `--error` as an option would likely result in an error because it's not recognized by most commands. It's not a conventional method for accessing additional help on using the system.
+**Using the --error option**: This option is not a standard convention in Linux for accessing help or documentation. In fact, using `--error` as an option would likely result in an error because it's not recognized by most commands. It's not a conventional method for accessing additional help on using the system.
 
 ### Question 7
+What do we mean when we say a programming language strives to be **effiecient**?
+
 **Answer:** `It should be reliable, easy to read, easy to write, reusable, and use computer resources effectively.`
 
 > [!NOTE]
 > This question has no single answer, however it may be helpful to reference slide 6 of lecture 2a, assuming it remains unchanged from the time of writing.
 
 ### Question 8
+What programming paradigm does C belong to?
+
++ `Functional`
++ `Logic`
++ `Imperative`
++ `Object-Oriented`
+
 **Answer:** `Imperative`
 
 **Explanation:**
@@ -320,6 +378,14 @@ So, according to the permissions displayed, members of your group (`eckert` grou
 4. **Object-Oriented Programming Paradigm**: Object-oriented programming (OOP) is centered around objects, which are instances of classes that encapsulate data and behavior. OOP languages support features like inheritance, polymorphism, and encapsulation. Examples of object-oriented languages include Java, C++, and Python. While C can implement some object-oriented concepts manually (e.g., using structures and functions), it is not a pure object-oriented language, as it lacks native support for features like classes and inheritance. Therefore, C is not primarily an object-oriented programming language.
 
 ### Question 9
+Which of the following ***is not*** one of the four pillars of the Object-Oriented paradigm?
+
++ `Inheritence`
++ `Abstraction`
++ `Encapsulation`
++ `Compilation`
++ `Polymorphism`
+
 **Answer:** `Compilation`
 
 **Explanation:**
@@ -335,6 +401,16 @@ So, according to the permissions displayed, members of your group (`eckert` grou
 5. **Compilation**: Compilation is a process of translating source code written in a high-level programming language into machine-readable instructions. While compilation is an essential aspect of software development, it is not considered one of the four pillars of the Object-Oriented paradigm. Instead, the four pillars focus on principles and concepts related to object-oriented programming, such as inheritance, abstraction, encapsulation, and polymorphism.
 
 ### Question 10
+What are the three forces that influenced the evolution of languages?
+(Choose three)
+
++ `Companies strive to create something new for the market`
++ `Evolution of more powerful hardware`
++ `Von Neuman and Turing laid out a roadmap of languages and we are making progress`
++ `Need to create larger programs`
++ `With AI, computers are getting smarter`
++ `Development of compiler theory`
+
 **Answers:**
 + `Evolution of more powerful hardware`
 + `Need to create larger programs`
@@ -349,11 +425,20 @@ So, according to the permissions displayed, members of your group (`eckert` grou
 - **Von Neuman and Turing laid out a roadmap of languages and we are making progress**: While the foundational work of Von Neumann and Turing has had a profound impact on computing and programming, it is considered part of the historical context rather than an ongoing force influencing the evolution of languages. Their contributions provided theoretical frameworks and conceptual models that continue to inform language design and implementation, but they do not represent a dynamic force actively driving language evolution in the present day.
 
 ### Question 11
+In early computers, the data was separate from the program instructions. In fact, the instructions were often physical configurations of the machine. Von Neumann proposed a new model combining these two aspects. What do we call this Architecture?
+
 **Answer:** `Von Neumann Architecture`
 > [!NOTE]
 > Also acceptable would be stored program concept, or even Eckert-Mauchly Architecture (although this answer is not correct outside the context of this class).
 
 ### Question 12
+A program accesses an illegal array index, for example accessing x[20] when x is an array of 10 ints. What type of error is this?
+
++ `Contextual Error`
++ `Lexical Error`
++ `Syntactic Error`
++ `Semantic Error`
+
 **Answer:** `Semantic Error`
 
 > [!WARNING]
@@ -370,6 +455,15 @@ So, according to the permissions displayed, members of your group (`eckert` grou
 4. **Semantic Error**: Semantic errors occur when the code compiles and executes without generating any syntax or runtime errors, but it does not produce the expected results due to logical or semantic flaws in the program. Accessing an illegal array index falls under this category because it does not violate the language's syntax rules, but it results in unintended behavior or runtime exceptions during program execution due to accessing memory locations beyond the bounds of the array.
 
 ### Question 13
+A new programmer calls a variable: `first name` 
+
+However, spaces are not allowed in a variable name. The compiler reports what kind of error?
+
++ `Contextual`
++ `Lexical`
++ `Semantic`
++ `Syntax`
+
 **Answer:** `Lexical`
 
 > [!WARNING]
@@ -380,6 +474,13 @@ So, according to the permissions displayed, members of your group (`eckert` grou
 A **Lexical Error** occurs when the compiler encounters invalid characters or tokens in the source code, violating the language's lexical rules. Lexical errors involve issues such as misspelled keywords, unrecognized symbols, or incorrect punctuation.
 
 ### Question 14
+Which of the following checks are generally ***not*** done by the compiler?
+
++ `Lexical`
++ `Syntactic`
++ `Contextual`
++ `Semantic`
+
 **Answer:** `Semantic`
 
 **Explanation:**
@@ -387,6 +488,17 @@ A **Lexical Error** occurs when the compiler encounters invalid characters or to
 While semantic analysis is an essential aspect of compilation, compilers have limitations in catching errors related to a programmer's logic or intent. Semantic errors, such as logical errors or incorrect algorithmic implementations, are often challenging for compilers to detect. Some semantic checks may be performed by compilers, but they are generally limited in scope. More complex semantic checks may require human intervention, code reviews, or the use of additional tools beyond the compiler.
 
 ### Question 15
+As you did with flex, write regular expressions to recognize each of the following:
+
+1. The keyword: finally
+2. An hexadecimal integer constant made up of 1 or more hexadecimal digits (upper or lowercase)
+3. The punctuation: &&
+4. A line starting with 1 or more digits
+
+You do not need any actions or even a legal flex file, just four regular expressions.
+
+Note: Hexadecimal digits include the digits 0 through 9 as well as the letters a through f.
+
 **Answers:**
 Here are the regular expressions to recognize each of the given patterns:
 
@@ -412,6 +524,11 @@ Here are the regular expressions to recognize each of the given patterns:
 > Professor Eckert seems to give some leeway on this problem; you may be able to squeak by with mostly accurate answers, but why push your luck?
 
 ### Question 16
+All modern languages ignore white space.
+
++ `true`
++ `false`
+
 **Answer:** `false`
 
 **Explanation:**
@@ -432,6 +549,22 @@ Here are the regular expressions to recognize each of the given patterns:
 In these languages, whitespace is not just a matter of style or convention but a fundamental aspect of the language syntax. Incorrect or inconsistent whitespace usage can lead to syntax errors and affect the behavior of the program. Therefore, in the context of these languages, the significance of whitespace is undeniable and integral to the language design.
 
 ### Question 17
+Use the following BNF grammar to answer the next three questions:
+```bnf
+<statements>  ::=  <assign> ; | <assign> ; <statements>
+<assign>      ::=  <var> = <expr>
+<var>         ::=  <char> | <char> <var>
+<char>        ::=  a | b | c | d
+<expr>        ::=  <var> | <var> <op> <var>
+<op>          ::=  + | - | * | / 
+```
+
+Which of the following is a terminal symbol?
++ `<char><variable>`
++ `<statments>`
++ `<char>`
++ `+`
+
 **Answer:** `+`
 
 **Explanation:**
@@ -439,6 +572,13 @@ In these languages, whitespace is not just a matter of style or convention but a
 A **terminal symbol** is a symbol in a formal grammar that does not have any other symbols defined in terms of it. It represents a fundamental building block or primitive element of the language described by the grammar. Thus, the actual character `+` is a terminal symbol.
 
 ### Question 18
+What is the purpose of this grammar? That is, what is it designed to recognize?
+
++ `var`
++ `all of these`
++ `statements`
++ `assign`
+
 **Answer:** `statements`
 
 **Explanation:**
@@ -446,6 +586,13 @@ A **terminal symbol** is a symbol in a formal grammar that does not have any oth
 Unless specified elsewhere in the grammar, you can assume that the very first non-terminal symbol defined at the top of the grammar is the symbol which that grammar is designed to recognize. In this example `statments` is defined in the very first line of the grammar. While it may seem intuitive to say the grammar defines many things thus its purpose is to recognize many things, this thinking is flawed. A grammar is looking to either have found the first symbol or not have found the first symbol; whether it found other things it recognizes is inconsequential.
 
 ### Question 19
+Which one of the following strings would be accepted by this grammar (i.e. is syntactically correct)?
+
++ `d = a + cba;`
++ `d = a + cba`
++ `a + cba = d;`
++ `d = a + cba d = a + cba`
+
 **Answer:** `d = a + cba;`
 
 **Explanation:**
@@ -474,6 +621,13 @@ Now, let's analyze each given string:
 Therefore, the only syntactically correct string accepted by the grammar is: `d = a + cba;`
 
 ### Question 20
+In a Java program, which line of code will cause an error?
+
++ `int x = 200.0 + 5;`
++ `float x = 200.0 +5;`
++ `int x = 200 + 5;`
++ `double x = 200.0 + 5;`
+
 **Answer:** `int x = 200.0 + 5;`
 
 > [!WARNING]
@@ -488,6 +642,13 @@ Therefore, the only syntactically correct string accepted by the grammar is: `d 
 Therefore, both of these lines will cause errors in a Java program due to attempting to assign incompatible types without explicit casting.
 
 ### Question 21
+What level of analysis would have detected the error in the previous question?
+
++ `Lexical`
++ `Syntactic`
++ `Contextual`
++ `Semantic`
+
 **Answer:** `Contextual`
 
 **Explanation:**
@@ -498,6 +659,13 @@ Therefore, both of these lines will cause errors in a Java program due to attemp
 >  Contextual analysis can detect certain errors related to variable types and assignments, but it typically does not catch all type mismatch errors. There may be some Semantic analysis at work here.
 
 ### Question 22
+What is one of the main reasons for using a two-step translation for some high-level programming languages? 
+
++ `One compiler for all machines`
++ `More accurate debugging information`
++ `Support stronger typing system`
++ `Better support for macros`
+
 **Answer:** `One compiler for all machines`
 
 **Explanation:**
@@ -515,6 +683,15 @@ Here's why:
 While the other options listed (more accurate debugging information, support for a stronger typing system, better support for macros) may be benefits of certain compilation strategies, they are not typically the main reasons for adopting a two-step translation approach.
 
 ### Question 23
+Give this macro definition:
+`#define diff(a, b) (a - b)`
+What is the value of diff(10, 3-2)?
+
++ `7`
++ `15`
++ `5`
++ `9`
+
 **Answer:** `5`
 
 **Explanation:**
@@ -522,6 +699,8 @@ While the other options listed (more accurate debugging information, support for
 In C, using `#define` performs a literal textual substitution. In the example of `diff(10, 3-2)`, the literal substitution is `(10-3-2)` which evaluates to `5`. While it may be tempting to do the subtraction first, then substitute, that is not how `#define` works. If you wanted to achieve that effect however, you could use something like: `#define diff(a, b) ((a)-(b))` which would then substitute as `((10)-(3-2))` which evaluates as `9`.
 
 ### Question 24
+What two things define a data type?
+
 **Answer:** `A set of values and a set of operations over those values.`
 
 **Explanation:**
