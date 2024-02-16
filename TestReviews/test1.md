@@ -264,13 +264,7 @@ Match the symbols with the directories
 
 **Explanation:**
 
-1. `/`: The forward slash symbol `/` represents the root directory in a Unix-like file system hierarchy. It is the top-level directory that contains all other directories and files on the system.
-
-2. `.`: The dot symbol `.` represents the current directory in a Unix-like file system. It is a reference to the directory you are currently in.
-
-3. `~`: The tilde symbol `~` represents the home directory of the current user. It provides a shortcut to navigate to the user's home directory.
-
-4. `..`: The double dot symbol `..` represents the parent directory of the current directory. It allows you to navigate up one level in the directory hierarchy.
+These ones you just have to memorize.
 
 ### Question 4
 Match the command with the function
@@ -347,7 +341,15 @@ Which of the following Linux commands/conventions does not ***does not*** provid
 
 **Explanation:**
 
-**Using the --error option**: This option is not a standard convention in Linux for accessing help or documentation. In fact, using `--error` as an option would likely result in an error because it's not recognized by most commands. It's not a conventional method for accessing additional help on using the system.
+1. **Using the --help option**: Many Linux commands support the `--help` option, which provides a brief overview of the command's usage, options, and syntax. It is a common convention in Linux to include this option for commands to offer quick help to users.
+
+2. **Using the apropos command**: The `apropos` command is used to search the manual page names and descriptions for keywords. It helps users find relevant commands or topics based on the provided keyword. It serves as a useful tool for discovering commands related to a specific topic.
+**Answer:** `Using the --error option`
+
+3. **Using the man command**: The `man` command is used to display the manual pages for other commands. It provides detailed documentation, including usage instructions, options, and examples, for a specific command. By typing `man` followed by the name of the command, users can access comprehensive help and documentation directly from the terminal.
+**Explanation:**
+
+4. **Using the --error option**: This option is not a standard convention in Linux for accessing help or documentation. In fact, using `--error` as an option would likely result in an error because it's not recognized by most commands. It's not a conventional method for accessing additional help on using the system.
 
 ### Question 7
 What do we mean when we say a programming language strives to be **effiecient**?
