@@ -154,7 +154,7 @@ do_stmt		: DO stmt WHILE LPAREN expr RPAREN SEMICOLON
 				{ printf("Found a do loop\n"); }
 			;
 
-for_stmt	: FOR LPAREN expr_list SEMICOLON expr SEMICOLON
+for_stmt	: FOR LPAREN expr_list SEMICOLON expr SEMICOLON expr_list RPAREN expr
 				{ printf("Found a for loop\n"); }
 			;
 
