@@ -7,6 +7,6 @@ struct Variable
     int value;
 };
 
-int var_isIdEqual(const char *id);
+int var_isIdEqual(const struct Variable variable, const char *id);
 
 #endif
