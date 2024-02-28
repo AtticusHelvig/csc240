@@ -5,8 +5,8 @@
 
 typedef struct ScopeTree ScopeTree;
 struct ScopeTree {
-  Variable variable;
-  ScopeTree *left, *right;
+    Variable variable;
+    ScopeTree *left, *right;
 };
 
 #endif

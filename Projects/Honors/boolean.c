@@ -2,11 +2,10 @@
 
 int yyparse();
 
-int main()
-{
-   printf("Boolean Algebra Interpreter\n\n");
+int main() {
+    printf("Boolean Algebra Interpreter\n\n");
 
-   yyparse();
+    yyparse();
 
-   return 0;
+    return 0;
 }
