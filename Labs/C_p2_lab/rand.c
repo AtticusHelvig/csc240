@@ -32,7 +32,7 @@ int main() {
         printf("Enter search item: ");
         scanf("%d", &n);
     } while (inlist(n, list, 20) >= 0);
-    printf("\n\n");
+    printf("\n");
 
     // Ask for a random number seed and print the number of iterations before a
     // repeat.
