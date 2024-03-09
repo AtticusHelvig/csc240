@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "includes/expr_tree.h"
 int yylex (void);
 void yyerror (char const *);
 extern char *yytext;
@@ -9,6 +10,7 @@ extern char *yytext;
 
 %union {
         int boolean;
+        ExpressionTree* tree;
 }
 
 %token AND          1001
@@ -33,7 +35,7 @@ extern char *yytext;
 %token XNOR         1020
 %token XOR          1021
 
-%type <boolean> expr
+%type <tree> expr
 %type <boolean> bool
 
 %%
@@ -44,21 +46,23 @@ decl_list   : decl
             | decl decl_list
             ;
 
-decl        : stmt
+decl        : expr_list
             | component_decl
             ;
 
-expr        : bool                  { $$ = $1; }
+expr        : bool  
+            { $$ = tree_init(literal);
+              $$->node->literal = $1; }
             // | id
-            | id EQUALS expr        { $$ = $3; }
-            | LPAREN expr RPAREN    { $$ = $2; }
-            | expr AND expr         { $$ = $1 && $3; }
-            | expr OR expr          { $$ = $1 || $3; }
-            | expr XOR expr         { $$ = ($1 || $3) && !($1 && $3); }
-            | expr NAND expr        { $$ = !($1 && $3); }
-            | expr NOR expr         { $$ = !($1 || $3); }
-            | expr XNOR expr        { $$ = !(($1 || $3) && !($1 && $3)); }
-            | NOT expr              { $$ = !$2; }
+            // | id EQUALS expr        { $$ = $3; }
+            // | LPAREN expr RPAREN    { $$ = $2; }
+            // | expr AND expr         { $$ = $1 && $3; }
+            // | expr OR expr          { $$ = $1 || $3; }
+            // | expr XOR expr         { $$ = ($1 || $3) && !($1 && $3); }
+            // | expr NAND expr        { $$ = !($1 && $3); }
+            // | expr NOR expr         { $$ = !($1 || $3); }
+            // | expr XNOR expr        { $$ = !(($1 || $3) && !($1 && $3)); }
+            // | NOT expr              { $$ = !$2; }
             // | id LPAREN RPAREN
             // | id LPAREN arg_list RPAREN
             ;
@@ -79,6 +83,8 @@ component_decl
             : id LPAREN opt_params RPAREN stmt
             ;
 
+stmt        : expr SEMICOLON
+
 opt_params  : // Empty
             | param_decl_list
             | param_decl_list COLON param_decl_list
@@ -92,16 +98,8 @@ param_decl_list
 param_decl  : id
             ;
 
-stmt        : expr SEMICOLON
-                { printf(">>> %s\n", $1 == 0 ? "false" : "true"); }
-            ;
-
-stmt_list   : stmt
-            | stmt stmt_list
-            ;
-
 compound_stmt
-            : LBRACE stmt_list RBRACE
+            : LBRACE stmt RBRACE
             ;
 
 arg_list    : expr
