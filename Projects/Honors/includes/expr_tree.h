@@ -38,7 +38,7 @@ int op_evaluate(ExpressionTree *tree);
 
 struct Variable {
     char *id;
-    int *value;
+    ExpressionTree *value;
 };
 
 int var_evaluate(Variable *variable);

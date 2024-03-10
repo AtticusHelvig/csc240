@@ -53,8 +53,13 @@ decl        : stmt_list
 expr        : bool  
                 { $$ = tree_init(LITERAL, NULL, NULL);
                   $$->node->literal = $1; }
-            // | id
-            // | id EQUALS expr        { $$ = $3; }
+            | id
+                { $$ = tree_init(VARIABLE, NULL, NULL);
+                  strcpy($$->node->variable->id, yytext); }
+            | id EQUALS expr
+                { $$ = tree_init(VARIABLE, NULL, NULL);
+                  strcpy($$->node->variable->id, yytext);
+                  $$->node->variable->value = $3; }
                | LPAREN expr RPAREN    { $$ = $2; }
             | expr AND expr
                 { $$ = tree_init(OPERATION, $1, $3);
