@@ -60,7 +60,7 @@ expr        : bool
                 { $$ = tree_init(VARIABLE, NULL, NULL);
                   strcpy($$->node->variable->id, yytext);
                   $$->node->variable->value = $3; }
-               | LPAREN expr RPAREN    { $$ = $2; }
+            | LPAREN expr RPAREN    { $$ = $2; }
             | expr AND expr
                 { $$ = tree_init(OPERATION, $1, $3);
                   $$->node->operator = and; }
