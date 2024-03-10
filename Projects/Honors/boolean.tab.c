@@ -536,16 +536,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  19
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   64
+#define YYLAST   63
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  24
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  13
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  30
+#define YYNRULES  32
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  51
+#define YYNSTATES  53
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   1022
@@ -671,10 +671,10 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    42,    42,    45,    46,    49,    50,    53,    58,    59,
-      62,    65,    68,    71,    74,    77,    80,    85,    86,    89,
-      90,    98,   101,   104,   105,   108,   109,   110,   114,   115,
-     118
+       0,    42,    42,    45,    46,    49,    50,    53,    56,    60,
+      65,    66,    69,    72,    75,    78,    81,    84,    87,    92,
+      93,    96,    97,   105,   108,   111,   112,   115,   116,   117,
+     121,   122,   125
 };
 #endif
 
@@ -705,7 +705,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-41)
+#define YYPACT_NINF (-17)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -719,12 +719,12 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -3,   -41,    -1,    -3,    -3,   -41,    11,   -41,    -3,    13,
-     -41,     1,   -41,    -3,   -41,     6,    29,     5,    41,   -41,
-     -41,    -3,    -3,    -3,    -3,   -41,    -3,    -3,    -5,   -41,
-      12,   -41,     4,    41,    41,    41,    41,    41,    41,   -41,
-     -41,    15,    27,    32,   -41,    -3,    30,    30,   -41,   -41,
-     -41
+      -3,   -17,    12,    -3,    -3,   -17,     6,   -17,    -3,    14,
+     -17,     1,   -17,    -3,   -17,     2,    28,     4,    40,   -17,
+     -17,    -3,    -3,    -3,    -3,   -17,    -3,    -3,    -3,    -5,
+     -17,    17,   -17,    -4,    40,    40,    40,    40,    40,    40,
+      40,   -17,   -17,    19,    35,    41,   -17,    -3,    32,    32,
+     -17,   -17,   -17
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -732,26 +732,26 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,    18,    19,     0,     0,    17,     0,     2,     3,     0,
-       7,     0,     6,    23,     5,     0,     0,     0,    15,     1,
-       4,     0,     0,     0,     0,    22,     0,     0,     0,    24,
-       0,     8,     0,     9,    12,    13,    10,    14,    11,    16,
-      30,     0,    26,    28,    20,     0,     0,     0,    21,    27,
-      29
+       0,    20,    21,     0,     0,    19,     0,     2,     3,     0,
+       7,     8,     6,    25,     5,     0,     0,     8,    17,     1,
+       4,     0,     0,     0,     0,    24,     0,     0,     0,     0,
+      26,     0,    10,     0,    11,    14,    15,    12,    16,    13,
+       9,    18,    32,     0,    28,    30,    22,     0,     0,     0,
+      23,    29,    31
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -41,   -41,    31,   -41,    -2,   -41,     0,   -41,    -4,    36,
-     -41,   -40,   -41
+     -17,   -17,    37,   -17,    -2,   -17,     0,   -17,     5,    42,
+     -17,   -16,   -17
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
        0,     6,     7,     8,     9,    10,    17,    12,    13,    14,
-      41,    42,    43
+      43,    44,    45
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -759,24 +759,24 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      11,    16,    18,     2,     1,     2,    49,    50,    11,     3,
-      15,    19,     4,    28,    39,    30,    21,    32,     5,    33,
-      34,    35,    36,    39,    37,    38,    22,    23,    40,    24,
-      44,    46,    21,    25,    45,    26,    27,    47,     2,    20,
-       0,    48,    22,    23,    21,    24,    40,    40,    31,    29,
-       0,    26,    27,     0,    22,    23,     0,    24,     0,     0,
-       0,     0,     0,    26,    27
+      11,    16,    18,     2,     1,     2,    19,    28,    11,     3,
+      28,    31,     4,    29,    41,    41,    33,    21,     5,    34,
+      35,    36,    37,    15,    38,    39,    40,    22,    23,    42,
+      24,    21,    51,    52,    25,    46,    26,    27,    47,    48,
+       2,    22,    23,    21,    24,    20,    49,    32,    42,    42,
+      26,    27,    50,    22,    23,    30,    24,     0,     0,     0,
+       0,     0,    26,    27
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,     3,     4,     8,     7,     8,    46,    47,     8,    12,
-      11,     0,    15,    12,    19,     9,     3,    12,    21,    21,
-      22,    23,    24,    19,    26,    27,    13,    14,    28,    16,
-      18,     4,     3,    20,    19,    22,    23,     5,     8,     8,
-      -1,    45,    13,    14,     3,    16,    46,    47,    19,    13,
-      -1,    22,    23,    -1,    13,    14,    -1,    16,    -1,    -1,
-      -1,    -1,    -1,    22,    23
+       0,     3,     4,     8,     7,     8,     0,     6,     8,    12,
+       6,     9,    15,    12,    19,    19,    12,     3,    21,    21,
+      22,    23,    24,    11,    26,    27,    28,    13,    14,    29,
+      16,     3,    48,    49,    20,    18,    22,    23,    19,     4,
+       8,    13,    14,     3,    16,     8,     5,    19,    48,    49,
+      22,    23,    47,    13,    14,    13,    16,    -1,    -1,    -1,
+      -1,    -1,    22,    23
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -785,28 +785,28 @@ static const yytype_int8 yystos[] =
 {
        0,     7,     8,    12,    15,    21,    25,    26,    27,    28,
       29,    30,    31,    32,    33,    11,    28,    30,    28,     0,
-      26,     3,    13,    14,    16,    20,    22,    23,    12,    33,
-       9,    19,    12,    28,    28,    28,    28,    28,    28,    19,
-      30,    34,    35,    36,    18,    19,     4,     5,    32,    35,
-      35
+      26,     3,    13,    14,    16,    20,    22,    23,     6,    12,
+      33,     9,    19,    12,    28,    28,    28,    28,    28,    28,
+      28,    19,    30,    34,    35,    36,    18,    19,     4,     5,
+      32,    35,    35
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
        0,    24,    25,    26,    26,    27,    27,    28,    28,    28,
-      28,    28,    28,    28,    28,    28,    28,    29,    29,    30,
-      30,    31,    32,    33,    33,    34,    34,    34,    35,    35,
-      36
+      28,    28,    28,    28,    28,    28,    28,    28,    28,    29,
+      29,    30,    30,    31,    32,    33,    33,    34,    34,    34,
+      35,    35,    36
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     1,     1,     2,     1,     1,     1,     3,     3,
-       3,     3,     3,     3,     3,     2,     3,     1,     1,     1,
-       4,     5,     2,     1,     2,     0,     1,     3,     1,     3,
-       1
+       0,     2,     1,     1,     2,     1,     1,     1,     1,     3,
+       3,     3,     3,     3,     3,     3,     3,     2,     3,     1,
+       1,     1,     4,     5,     2,     1,     2,     0,     1,     3,
+       1,     3,     1
 };
 
 
@@ -1276,87 +1276,104 @@ yyreduce:
 #line 1277 "boolean.tab.c"
     break;
 
-  case 8: /* expr: LPAREN expr RPAREN  */
-#line 58 "boolean.y"
-                                       { (yyval.tree) = (yyvsp[-1].tree); }
-#line 1283 "boolean.tab.c"
+  case 8: /* expr: id  */
+#line 57 "boolean.y"
+                { (yyval.tree) = tree_init(VARIABLE, NULL, NULL);
+                  (yyval.tree)->node->variable->id = char[255];
+                  strcpy((yyval.tree)->node->variable->id, yytext); }
+#line 1285 "boolean.tab.c"
     break;
 
-  case 9: /* expr: expr AND expr  */
-#line 60 "boolean.y"
+  case 9: /* expr: id EQUALS expr  */
+#line 61 "boolean.y"
+                { (yyval.tree) = tree_init(VARIABLE, NULL, NULL);
+                  (yyval.tree)->node->variable->id = char[255];
+                  strcpy((yyval.tree)->node->variable->id, yytext);
+                  (yyval.tree)->node->variable->value = (yyvsp[0].tree); }
+#line 1294 "boolean.tab.c"
+    break;
+
+  case 10: /* expr: LPAREN expr RPAREN  */
+#line 65 "boolean.y"
+                                    { (yyval.tree) = (yyvsp[-1].tree); }
+#line 1300 "boolean.tab.c"
+    break;
+
+  case 11: /* expr: expr AND expr  */
+#line 67 "boolean.y"
                 { (yyval.tree) = tree_init(OPERATION, (yyvsp[-2].tree), (yyvsp[0].tree));
                   (yyval.tree)->node->operator = and; }
-#line 1290 "boolean.tab.c"
+#line 1307 "boolean.tab.c"
     break;
 
-  case 10: /* expr: expr OR expr  */
-#line 63 "boolean.y"
+  case 12: /* expr: expr OR expr  */
+#line 70 "boolean.y"
                 { (yyval.tree) = tree_init(OPERATION, (yyvsp[-2].tree), (yyvsp[0].tree));
                   (yyval.tree)->node->operator = or; }
-#line 1297 "boolean.tab.c"
+#line 1314 "boolean.tab.c"
     break;
 
-  case 11: /* expr: expr XOR expr  */
-#line 66 "boolean.y"
+  case 13: /* expr: expr XOR expr  */
+#line 73 "boolean.y"
                 { (yyval.tree) = tree_init(OPERATION, (yyvsp[-2].tree), (yyvsp[0].tree));
                   (yyval.tree)->node->operator = xor; }
-#line 1304 "boolean.tab.c"
+#line 1321 "boolean.tab.c"
     break;
 
-  case 12: /* expr: expr NAND expr  */
-#line 69 "boolean.y"
+  case 14: /* expr: expr NAND expr  */
+#line 76 "boolean.y"
                 { (yyval.tree) = tree_init(OPERATION, (yyvsp[-2].tree), (yyvsp[0].tree));
                   (yyval.tree)->node->operator = nand; }
-#line 1311 "boolean.tab.c"
+#line 1328 "boolean.tab.c"
     break;
 
-  case 13: /* expr: expr NOR expr  */
-#line 72 "boolean.y"
+  case 15: /* expr: expr NOR expr  */
+#line 79 "boolean.y"
                 { (yyval.tree) = tree_init(OPERATION, (yyvsp[-2].tree), (yyvsp[0].tree));
                   (yyval.tree)->node->operator = nor; }
-#line 1318 "boolean.tab.c"
+#line 1335 "boolean.tab.c"
     break;
 
-  case 14: /* expr: expr XNOR expr  */
-#line 75 "boolean.y"
+  case 16: /* expr: expr XNOR expr  */
+#line 82 "boolean.y"
                 { (yyval.tree) = tree_init(OPERATION, (yyvsp[-2].tree), (yyvsp[0].tree));
                   (yyval.tree)->node->operator = xnor; }
-#line 1325 "boolean.tab.c"
+#line 1342 "boolean.tab.c"
     break;
 
-  case 15: /* expr: NOT expr  */
-#line 78 "boolean.y"
+  case 17: /* expr: NOT expr  */
+#line 85 "boolean.y"
                 { (yyval.tree) = tree_init(OPERATION, (yyvsp[0].tree), NULL);
                   (yyval.tree)->node->operator = not; }
-#line 1332 "boolean.tab.c"
+#line 1349 "boolean.tab.c"
     break;
 
-  case 16: /* expr: id LPAREN RPAREN  */
-#line 81 "boolean.y"
+  case 18: /* expr: id LPAREN RPAREN  */
+#line 88 "boolean.y"
                 { (yyval.tree) = tree_init(FUNCTION, NULL, NULL); }
-#line 1338 "boolean.tab.c"
+#line 1355 "boolean.tab.c"
     break;
 
-  case 17: /* bool: TRUE  */
-#line 85 "boolean.y"
+  case 19: /* bool: TRUE  */
+#line 92 "boolean.y"
                                     { (yyval.boolean) = 1; }
-#line 1344 "boolean.tab.c"
+#line 1361 "boolean.tab.c"
     break;
 
-  case 18: /* bool: FALSE  */
-#line 86 "boolean.y"
+  case 20: /* bool: FALSE  */
+#line 93 "boolean.y"
                                     { (yyval.boolean) = 0; }
-#line 1350 "boolean.tab.c"
+#line 1367 "boolean.tab.c"
     break;
 
-  case 22: /* stmt: expr SEMICOLON  */
-#line 101 "boolean.y"
+  case 24: /* stmt: expr SEMICOLON  */
+#line 108 "boolean.y"
                              { tree_print((yyvsp[-1].tree)); printf("\n");}
-#line 1356 "boolean.tab.c"
+#line 1373 "boolean.tab.c"
     break;
 
 
-#line 1360 "boolean.tab.c"
+#line 1377 "boolean.tab.c"
 
       default: break;
     }
@@ -1549,5 +1566,5 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 129 "boolean.y"
+#line 136 "boolean.y"
 
