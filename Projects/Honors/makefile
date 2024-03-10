@@ -3,6 +3,4 @@ boolean: boolean.c lex.yy.c boolean.tab.c
 
 lex.yy.c: boolean.l
 	flex boolean.l
-
-boolean.tab.c: boolean.y
-	bison --warnings=none boolean.y 
+	

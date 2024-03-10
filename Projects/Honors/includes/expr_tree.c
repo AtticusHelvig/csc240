@@ -7,6 +7,7 @@ ExpressionTree* tree_init(Type type) {
     fprintf(stderr, "In tree_init()\n");
     ExpressionTree* tp = (ExpressionTree*)malloc(sizeof(ExpressionTree));
     tp->node = tree_node_init(type);
+    return tp;
 }
 
 ExpressionTreeNode* tree_node_init(Type type) {
@@ -14,6 +15,7 @@ ExpressionTreeNode* tree_node_init(Type type) {
     ExpressionTreeNode* np =
         (ExpressionTreeNode*)malloc(sizeof(ExpressionTreeNode));
     np->type = type;
+    return np;
 }
 
 int tree_evaluate(ExpressionTree* tree) {

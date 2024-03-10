@@ -46,7 +46,7 @@ decl_list   : decl
             | decl decl_list
             ;
 
-decl        : expr_list
+decl        : stmt_list
             | component_decl
             ;
 
@@ -84,6 +84,11 @@ component_decl
             ;
 
 stmt        : expr SEMICOLON
+            ;
+
+stmt_list   : stmt
+            | stmt stmt_list
+            ;
 
 opt_params  : // Empty
             | param_decl_list
