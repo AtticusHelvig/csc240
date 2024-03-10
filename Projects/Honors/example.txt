@@ -6,7 +6,7 @@ true and true;
 true or false;
 // returns false
 
-true && false;
+true & false;
 // returns false
 
 halfAdder(x[2] : sum, cry) {
@@ -20,5 +20,5 @@ fullAdder(x[3] : sum, cry) {
     cry = cry1 or cry2;
 }
 
-table fullAdder();
+table fullAdder(?, ?, ? : ?, ?);
 // returns a truth table for the fullAdder function
