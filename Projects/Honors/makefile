@@ -5,4 +5,4 @@ lex.yy.c: boolean.l
 	flex boolean.l
 
 boolean.tab.c: boolean.y
-	/usr/bin/bison --warnings=none boolean.y 
+	bison --warnings=none boolean.y 

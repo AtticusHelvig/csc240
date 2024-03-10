@@ -51,7 +51,7 @@ decl        : expr_list
             ;
 
 expr        : bool  
-            { $$ = tree_init(literal);
+            { $$ = tree_init(LITERAL);
               $$->node->literal = $1; }
             // | id
             // | id EQUALS expr        { $$ = $3; }

@@ -10,7 +10,7 @@ typedef struct Variable Variable;
 typedef struct Function Function;
 typedef enum Type Type;
 typedef enum Operator Operator;
-enum Type { operation, variable, function, literal };
+enum Type { OPERATION, VARIABLE, FUNCTION, LITERAL };
 enum Operator { and, or, not, xor, nand, nor, xnor };
 
 struct ExpressionTree {

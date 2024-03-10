@@ -1,13 +1,16 @@
 #include "expr_tree.h"
 
+#include <stdio.h>
 #include <string.h>
 
 ExpressionTree* tree_init(Type type) {
+    fprintf(stderr, "In tree_init()\n");
     ExpressionTree* tp = (ExpressionTree*)malloc(sizeof(ExpressionTree));
     tp->node = tree_node_init(type);
 }
 
 ExpressionTreeNode* tree_node_init(Type type) {
+    fprintf(stderr, "In tree_node_init()\n");
     ExpressionTreeNode* np =
         (ExpressionTreeNode*)malloc(sizeof(ExpressionTreeNode));
     np->type = type;
@@ -21,19 +24,19 @@ int tree_evaluate(ExpressionTree* tree) {
     int value;
 
     switch (tree->node->type) {
-        case operation:
+        case OPERATION:
             value = op_evaluate(tree);
             break;
 
-        case variable:
+        case VARIABLE:
             value = var_evaluate(tree->node->variable);
             break;
 
-        case literal:
+        case LITERAL:
             value = tree->node->literal;
             break;
 
-        case function:
+        case FUNCTION:
             value = func_evaluate(tree->node->function);
 
         default:
