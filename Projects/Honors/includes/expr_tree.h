@@ -1,11 +1,12 @@
 #ifndef EXPR_TREE_H
 #define EXPR_TREE_H
 
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct ExpressionTree ExpressionTree;
 typedef struct ExpressionTreeNode ExpressionTreeNode;
-typedef struct Operation Operation;
 typedef struct Variable Variable;
 typedef struct Function Function;
 typedef enum Type Type;
@@ -18,22 +19,20 @@ struct ExpressionTree {
     ExpressionTree *left, *right;
 };
 
-ExpressionTree *tree_init(Type type);
+ExpressionTree *tree_init(Type type, ExpressionTree *left,
+                          ExpressionTree *right);
 int tree_evaluate(ExpressionTree *tree);
+void tree_print(ExpressionTree *tree);
 
 struct ExpressionTreeNode {
     Type type;
     int literal;
-    Operation *operation;
+    Operator operator;
     Variable *variable;
     Function *function;
 };
 
 ExpressionTreeNode *tree_node_init(Type type);
-
-struct Operation {
-    Operator op;
-};
 
 int op_evaluate(ExpressionTree *tree);
 

@@ -51,19 +51,34 @@ decl        : stmt_list
             ;
 
 expr        : bool  
-            { $$ = tree_init(LITERAL);
-              $$->node->literal = $1; }
+                { $$ = tree_init(LITERAL, NULL, NULL);
+                  $$->node->literal = $1; }
             // | id
             // | id EQUALS expr        { $$ = $3; }
-            // | LPAREN expr RPAREN    { $$ = $2; }
-            // | expr AND expr         { $$ = $1 && $3; }
-            // | expr OR expr          { $$ = $1 || $3; }
-            // | expr XOR expr         { $$ = ($1 || $3) && !($1 && $3); }
-            // | expr NAND expr        { $$ = !($1 && $3); }
-            // | expr NOR expr         { $$ = !($1 || $3); }
-            // | expr XNOR expr        { $$ = !(($1 || $3) && !($1 && $3)); }
-            // | NOT expr              { $$ = !$2; }
-            // | id LPAREN RPAREN
+               | LPAREN expr RPAREN    { $$ = $2; }
+            | expr AND expr
+                { $$ = tree_init(OPERATION, $1, $3);
+                  $$->node->operator = and; }
+            | expr OR expr
+                { $$ = tree_init(OPERATION, $1, $3);
+                  $$->node->operator = or; }
+            | expr XOR expr
+                { $$ = tree_init(OPERATION, $1, $3);
+                  $$->node->operator = xor; }
+            | expr NAND expr
+                { $$ = tree_init(OPERATION, $1, $3);
+                  $$->node->operator = nand; }
+            | expr NOR expr
+                { $$ = tree_init(OPERATION, $1, $3);
+                  $$->node->operator = nor; }
+            | expr XNOR expr
+                { $$ = tree_init(OPERATION, $1, $3);
+                  $$->node->operator = xnor; }
+            | NOT expr
+                { $$ = tree_init(OPERATION, $2, NULL);
+                  $$->node->operator = not; }
+            | id LPAREN RPAREN
+                { $$ = tree_init(FUNCTION, NULL, NULL); }
             // | id LPAREN arg_list RPAREN
             ;
 
@@ -83,7 +98,7 @@ component_decl
             : id LPAREN opt_params RPAREN stmt
             ;
 
-stmt        : expr SEMICOLON
+stmt        : expr SEMICOLON { tree_print($1); printf("\n");}
             ;
 
 stmt_list   : stmt
@@ -104,7 +119,7 @@ param_decl  : id
             ;
 
 compound_stmt
-            : LBRACE stmt RBRACE
+            : LBRACE stmt_list RBRACE
             ;
 
 arg_list    : expr

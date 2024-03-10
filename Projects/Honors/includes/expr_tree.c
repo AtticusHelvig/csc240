@@ -1,17 +1,15 @@
 #include "expr_tree.h"
 
-#include <stdio.h>
-#include <string.h>
-
-ExpressionTree* tree_init(Type type) {
-    fprintf(stderr, "In tree_init()\n");
+ExpressionTree* tree_init(Type type, ExpressionTree* left,
+                          ExpressionTree* right) {
     ExpressionTree* tp = (ExpressionTree*)malloc(sizeof(ExpressionTree));
     tp->node = tree_node_init(type);
+    tp->left = left;
+    tp->right = right;
     return tp;
 }
 
 ExpressionTreeNode* tree_node_init(Type type) {
-    fprintf(stderr, "In tree_node_init()\n");
     ExpressionTreeNode* np =
         (ExpressionTreeNode*)malloc(sizeof(ExpressionTreeNode));
     np->type = type;
@@ -48,14 +46,47 @@ int tree_evaluate(ExpressionTree* tree) {
     return value;
 }
 
-int op_evaluate(ExpressionTree* tree) {
-    if (tree->node->operation == NULL) {
-        return -1;
+void tree_print(ExpressionTree* tree) {
+    char rep = 'N';
+
+    if (tree == NULL) {
+        printf("[N] ");
+        return;
     }
 
-    Operator op = tree->node->operation->op;
+    if (tree->node == NULL) {
+        printf("[!] ");
+        return;
+    }
+
+    switch (tree->node->type) {
+        case OPERATION:
+            rep = '+';
+            break;
+        case VARIABLE:
+            rep = tree->node->variable->id[0];
+            break;
+        case LITERAL:
+            rep = tree->node->literal + '0';
+            break;
+        case FUNCTION:
+            rep = 'F';
+            break;
+        default:
+            break;
+    }
+
+    printf("[%c] ", rep);
+    tree_print(tree->left);
+    tree_print(tree->right);
+    return;
+}
+
+int op_evaluate(ExpressionTree* tree) {
+    Operator op = tree->node->operator;
     int left = tree_evaluate(tree->left);
     int right = -1;
+
     if (op != not ) {
         right = tree_evaluate(tree->right);
         if (right == -1) {
