@@ -32,6 +32,14 @@ int main() {
     printStudent(&tesla);
 
     // Add yourself as a pointer to s Student with the new operator.
+    Student *atticus = new Student("Atticus Helvig");
+
+    atticus->addClass(3, 4);
+    atticus->addClass(5, 2);
+    atticus->addClass(4, 4);
+    atticus->addClass(3, 4);
+    atticus->addClass(4, 3);
+    printStudent(atticus);
 
     return 0;
 }
